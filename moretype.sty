@@ -1,0 +1,60 @@
+%%%
+%%% moretype.sty -- Typography
+%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{moretype}
+[2018/04/30 Typographic settings for the argon classes]
+
+% Avoid widows, orphans, and lines sticking into the margin
+\clubpenalty=500
+\widowpenalty=1000
+\tolerance=300
+
+% Set a point size of 11 and leading of 15pt
+\renewcommand\Large{\@setfontsize\Large{16pt}{22pt}}
+\renewcommand\large{\@setfontsize\large{12pt}{17pt}}
+\renewcommand\normalsize{\@setfontsize\normalsize{11pt}{15pt}}
+\renewcommand\small{\@setfontsize\small{10pt}{13pt}}
+% \renewcommand\tiny{\@setfontsize\tiny{10pt}{13pt}}
+
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{AlegreyaSans}
+\renewcommand*\oldstylenums[1]{{\AlegreyaSansOsF #1}}
+\RequirePackage{lmodern}
+
+% Use the Minion Pro font
+\usepackage[fullfamily]{MinionPro}
+
+% Ornaments
+\RequirePackage{fourier-orns}
+
+% Microtypographic awesomeness!
+\RequirePackage[
+final,
+tracking=true,
+kerning=true,
+spacing=true,
+]{microtype}
+
+% Disable purely ornamental Th ligature
+\DisableLigatures[T]{encoding={*}}
+
+% Add extra space around some analphabetics as a hybrid between English and
+% French spacing
+\SetExtraKerning[unit=space]
+    {encoding={*}, size={footnotesize,small,normalsize}}
+    {\textendash={200,200},      % en-dash
+     "28={ ,150},                % left parenthesis
+     "29={150, },                % right parenthesis
+     ?={250, },                  % question mark
+     !={150, },                  % exclamation mark
+     :={150, },                  % colon
+     ;={150, },                  % semicolon
+     \textquotedblleft={ ,150},  % left quotation mark
+     \textquotedblright={150, }} % right quotation mark
+
+% Same amount of space between sentences as between words
+\frenchspacing
+

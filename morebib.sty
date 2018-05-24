@@ -1,0 +1,25 @@
+%%%
+%%% morebib.sty -- Bibliography setup
+%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{morebib}
+[2018/04/30 A bibliography setup for the argon group of classes]
+
+% Required by biblatex
+\RequirePackage{csquotes}
+
+% Bibliography management
+\RequirePackage[
+  backend=biber,
+  autocite=superscript,
+  backref=true,
+]{biblatex}
+
+% Set bibliography source file
+\addbibresource{refs.bib}
+
+% Automatically use specified citation type
+\newcommand\mycite{\unskip~\autocite}
+\let\cite\mycite
+

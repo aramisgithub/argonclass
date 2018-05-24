@@ -1,0 +1,25 @@
+%%%
+%%% morelink.sty -- Hyperref
+%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{morelink}
+[2018/04/30 PDF hyperlink settings for the argon classes]
+
+% Add PDF hyperlinks
+\RequirePackage{hyperref}
+
+% Sans serif links
+\urlstyle{sf}
+
+% Set link colours
+\hypersetup{%
+  colorlinks=true,
+  linkcolor=black,
+  anchorcolor=black,
+  citecolor=black,
+  urlcolor=brown,
+  breaklinks,
+  pdfborder=0 0 0,
+}
+

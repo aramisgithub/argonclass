@@ -1,0 +1,31 @@
+%%%
+%%% moretoc.sty -- Table of Contents and List of Figures/Tables
+%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{moretoc}
+[2018/04/30 Setup a table of contents, list of figures, and list of tables for use with the argon classes]
+
+% Table of Contents
+
+% Don't show subsections and deeper
+\maxtocdepth{section}
+
+\renewcommand{\cftchapterfont}{\large}
+\renewcommand{\cftchapterleader}{}
+\renewcommand{\cftchapterafterpnum}{\cftparfillskip}
+\cftpagenumbersoff{chapter}
+
+\renewcommand{\cftsectionfont}{\normalsize}
+\renewcommand{\cftsectionpagefont}{\normalsize\color{brown}}
+\cftsetindents{section}{1em}{0em}
+\renewcommand{\cftsectionleader}{}
+\renewcommand{\cftsectionafterpnum}{\cftparfillskip}
+
+% List of Figures/Tables
+
+\renewcommand{\cftfigureleader}{ }
+\renewcommand{\cftfigureafterpnum}{\cftparfillskip}
+\renewcommand{\cfttableleader}{ }
+\renewcommand{\cfttableafterpnum}{\cftparfillskip}
+

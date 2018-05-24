@@ -1,0 +1,60 @@
+%%%
+%%% morelayout.sty -- Layout
+%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{morelayout}
+[2018/04/30 The layout settings used in the argon classes]
+
+% Space between paragraphs
+\setlength{\parindent}{1.5em}
+\abnormalparskip{0em}
+
+% \nouppercaseheads
+
+% Plain headers and footers
+\makepagestyle{myps}
+\makeevenfoot{myps}{\normalfont\thepage}{}{}
+\makeoddfoot{myps}{}{}{\normalfont\thepage}
+
+% Set header and footer heights
+\setlength{\headheight}{15pt}
+\setlength{\footskip}{30pt}
+
+% Empty part page style
+\aliaspagestyle{part}{empty}
+\aliaspagestyle{chapter}{myps}
+
+% Do not number anything
+\setsecnumdepth{none}
+
+% Chapter style
+\makechapterstyle{mychapter}{%
+   \renewcommand{\chapterheadstart}{}
+   \renewcommand{\printchaptername}{}
+   \renewcommand{\chapternamenum}{}
+   \renewcommand{\printchapternum}{}
+   \renewcommand{\afterchapternum}{}
+   \renewcommand{\printchaptertitle}[1]{%
+     \raggedright\uppercaps{##1}}
+   \renewcommand{\afterchaptertitle}{%
+     \vskip\onelineskip \hrule\vskip\onelineskip}
+}
+
+% (Sub)section styles
+\setsecheadstyle{\raggedright\large\scshape\needspace{1em}\lowercase}
+\setbeforesecskip{-1.1em minus 0.5em}
+\setaftersecskip{1em minus 0.5em}
+
+\setsubsecheadstyle{\raggedright\normalfont\itshape\needspace{1em}}
+\setbeforesubsecskip{-1em minus 0.5em}
+\setaftersubsecskip{1em minus 0.5em}
+
+% Allows customisation of lists
+\usepackage{enumitem}
+
+% Remove natural indentation of list environments
+\setlist[itemize]{label=\textbullet}
+\setlist{leftmargin=*,nosep}
+
+

@@ -1,0 +1,45 @@
+%%%
+%%% moresidenotes.sty -- Side notes
+%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{moresidenotes}
+[2018/04/30 Tufte-esque side notes and image commands for the argon classes]
+
+% Backend for margin notes
+\RequirePackage{marginnote}
+
+% Fix overlapping margin notes which are in close proximity
+\RequirePackage{marginfix}
+
+% Smaller margin notes
+\newcommand{\myside}[1]{\sidenote{\footnotesize\RaggedRight{#1}}}
+
+% Styling and placement of mark
+\footmarkstyle{{#1. }}
+\setlength{\footmarkwidth}{0em}
+\setlength{\footmarksep}{-\footmarkwidth}
+
+% Move all footnotes into margin
+\footnotesinmargin
+
+% Allow custom captions
+\RequirePackage{caption}
+
+% Margin figure caption settings
+\captionsetup[marginfigure]{
+  font={footnotesize,sf}
+}
+
+% Custom margin figure
+\newcommand{\myfig}[2]{
+  \begin{marginfigure}
+    \strictpagechecktrue
+    \captionsetup{type=figure,%
+                  options=marginfigure,%
+                  justification=RaggedRight}
+    \includegraphics[width=\linewidth]{#1}
+    \caption*{#2}
+  \end{marginfigure}
+}
+

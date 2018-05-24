@@ -1,0 +1,20 @@
+%%%
+%%% moretables.sty -- Table settings
+%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{moretables}
+  [2018/04/30 Table settings for the argon group of classes]
+
+% Nice dividing lines
+\RequirePackage{booktabs}
+
+% Allow tables to span multiple pages
+\RequirePackage{longtable}
+
+% Wrapped text inside tables while intelligently setting column width
+\RequirePackage{tabulary}
+
+% Minimum column width of tabulary is 5em
+\setlength{\tymin}{5em}
+

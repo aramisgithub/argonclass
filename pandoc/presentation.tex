@@ -1,0 +1,48 @@
+\documentclass{beamer}
+
+\usetheme{metropolis}
+\usepackage{graphicx}
+
+\usepackage[final]{microtype}
+
+% Command required by how Pandoc handles the list conversion
+\providecommand{\tightlist}{%
+\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Nice tables
+\usepackage{booktabs}
+\usepackage{longtable}
+
+\title{$title$}
+
+$if(author)$
+\author{$author$}
+$else$
+\author{Aramis Razzaghipour}
+$endif$
+
+$if(date)$
+\date{$date$}
+$else$
+\date{\today}
+$endif$
+
+$if(institute)$
+\institute{$institute$}
+$else$
+\institute{MSC}
+$endif$
+
+
+%%
+%% Document
+%%
+
+\begin{document}
+
+\maketitle
+
+$body$
+
+\end{document}
+

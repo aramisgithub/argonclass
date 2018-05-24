@@ -2,6 +2,10 @@
 
 This class is designed to be used both for reports and articles. 
 
+At the moment, this entire project has not been optimised for 
+general use, and has settings and options that are completely 
+specific to my usage.
+
 It is recommended that you do **not** use this class -- this 
 repository is meant for version control only. It is also 
 recommended that you only use this class with the included pandoc 

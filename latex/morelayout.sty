@@ -53,8 +53,16 @@
 % Allows customisation of lists
 \usepackage{enumitem}
 
-% Remove natural indentation of list environments
+% Use bullet for itemize regardless of indentation
 \setlist[itemize]{label=\textbullet}
-\setlist{leftmargin=*,nosep}
 
+% Remove all vertical spacing in all lists
+\setlist{nosep}
+
+% Place list labels in margin
+\setlist[1]{leftmargin=0em}
+\setlist[2]{leftmargin=1em}
+\setlist[3]{leftmargin=2em}
+\setlist[4]{leftmargin=3em}
+\setlist[5]{leftmargin=4em}
 

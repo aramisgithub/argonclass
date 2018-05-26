@@ -20,9 +20,7 @@
 \RequirePackage{morebib}
 \RequirePackage{morelayout}
 \RequirePackage{morefig}
-\setlength{\topskip}{1.6\topskip}
 \RequirePackage{moremargins}
-\sloppybottom
 \RequirePackage{moretoc}
 \RequirePackage{morelink}
 

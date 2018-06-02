@@ -1,5 +1,24 @@
 \documentclass[$if(sidenotes)$sidenotes,$endif$$if(twoside)$twoside,$endif$]{argon}
 
+% Titlepage
+\renewcommand{\maketitle}{%
+  \begin{titlingpage}
+    \null\vspace{8pc}
+
+    {\large\theauthor\par}%
+    \vspace{3pc}
+
+    {\Large\color{red}\uppercaps{$title1$}\par}%
+    \vspace{0.5em}
+    {\Large\color{red}\uppercaps{$title2$}\par}%
+    \vspace{3pc}
+
+    \vfill
+    {\large \thedate\par}%
+  \end{titlingpage}
+}
+
+% Metadata
 \title{$title$}
 
 $if(author)$
@@ -13,26 +32,6 @@ $if(date)$
 $else$
 \date{\today}
 $endif$
-
-% Titlepage
-\renewcommand{\maketitle}{%
-  \begin{titlingpage}
-    \begin{centered}
-      \null\vspace{8pc}
-
-      {\large\theauthor\par}%
-      \vspace{3pc}
-
-      {\Large\color{red}\uppercaps{$title1$}\par}%
-      \vspace{0.5em}
-      {\Large\color{red}\uppercaps{$title2$}\par}%
-      \vspace{3pc}
-
-      \vfill
-      {\large \thedate\par}%
-    \end{centered}
-  \end{titlingpage}
-}
 
 \hypersetup{
   $if(author)$

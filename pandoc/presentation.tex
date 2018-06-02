@@ -1,37 +1,171 @@
+%!TEX TS-program = xelatexmk
 \documentclass{beamer}
 
-\usetheme{metropolis}
-\usepackage{graphicx}
 
+%%
+%% Theme
+%%
+
+% Use the metropolis theme for a more modern layout
+\usetheme[
+  progressbar=frametitle % Show a prgress bar under the frame title
+]{metropolis}
+
+% Use green colours instead of the orange-and-teal colours used by default
+\usecolortheme{spruce}
+
+
+%%
+%% Fonts
+%%
+
+% Microtypographic awesomeness!
 \usepackage[final]{microtype}
+
+% Easily load system fonts
+\usefonttheme{professionalfonts}
+
+% Use system fonts for math
+\usepackage{mathspec}
+
+% Use text figures instead of lining figures
+\setsansfont[
+  BoldFont={Fira Sans},
+  Numbers={OldStyle}
+]{Fira Sans Light}
+
+\setmathsfont(Digits)[
+  Numbers={Lining, Proportional}
+]{Fira Sans Light}
+
+
+%%
+%% Bibliography
+%%
+
+% Only add bibliography-related code if we're using one
+$if(bib)$
+
+% Required by biblatex
+\RequirePackage{csquotes}
+
+% Bibliography management
+\RequirePackage[
+  backend=biber,        % Use biber as backend
+  style=numeric-comp,   % Sort inline citations
+  autocite=superscript, % Show citation number as a superscript
+  backref=true          % Show where something was cited
+]{biblatex}
+
+% Set bibliography source file
+\addbibresource{refs.bib}
+
+% Automatically use specified citation type
+\newcommand\mycite{\unskip~\autocite}
+\let\cite\mycite
+
+$endif$
 
 % Command required by how Pandoc handles the list conversion
 \providecommand{\tightlist}{%
-\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
-% Nice tables
-\usepackage{booktabs}
-\usepackage{longtable}
 
+%%
+%% Random packages
+%%
+
+\usepackage{booktabs}  % Fancy rules for tables
+\usepackage{graphicx}  % Add images
+\usepackage{longtable} % Wrap tables across frames
+\usepackage{tabularx}  % Allows you to wrap lines in a table
+
+
+%%
+%% Links
+%%
+
+\usepackage{hyperref}
+
+% Use Fira Sans for links
+\urlstyle{sf}
+
+% Set link colours
+\hypersetup{%
+  colorlinks=true,
+  linkcolor=black,
+  anchorcolor=black,
+  citecolor=black,
+  urlcolor=MSUgreen,
+  breaklinks,
+  pdfborder=0 0 0,
+}
+
+
+%%
+%% Metadata
+%%
+
+% Set title. No check has been added because title is the bare minimum of
+% information that can be specified
 \title{$title$}
 
+% Set the subtitle if it exists
+$if(subtitle)$
+\subtitle{$subtitle$}
+$endif$
+
+% Set the autor if it is specified. If it is not specified, then set it to my
+% name
 $if(author)$
 \author{$author$}
 $else$
 \author{Aramis Razzaghipour}
 $endif$
 
+% Set the date if it has been set. If it has not been set, then set it to be
+% today's date
 $if(date)$
 \date{$date$}
 $else$
 \date{\today}
 $endif$
 
+% Set the institute if it has been set. If it has not, then use the name of
+% where I will be giving a presentation
 $if(institute)$
 \institute{$institute$}
 $else$
-\institute{MSC}
+\institute{\textsc{\MakeTextLowercase{MSC}}}
 $endif$
+
+% Sets a bunch of PDF metadata intelligently depending on if it has been set
+\hypersetup{
+  $if(author)$
+    pdfauthor={$author$},
+  $else$
+    pdfauthor={Aramis Razzaghipour},
+  $endif$
+  pdftitle={$title$},
+  $if(subtitle)$
+    pdfsubject={$subtitle$},
+  $else$
+    pdfsubject={$title$},
+  $endif$
+  $if(author)$
+    $if(subtitle)$
+      pdfkeywords={$author$, $title$, $subtitle$},
+    $else$
+      pdfkeywords={$author$, $title$},
+    $endif$
+  $else$
+    $if(subtitle)$
+      pdfkeywords={Aramis Razzaghipour, $title$, $subtitle$},
+    $else$
+      pdfkeywords={Aramis Razzaghipour, $title$},
+    $endif$
+  $endif$
+}
 
 
 %%
@@ -43,6 +177,14 @@ $endif$
 \maketitle
 
 $body$
+
+% If we're using a bibliography, then add a frame that can break across
+% multiple slides
+$if(bib)$
+\begin{frame}[allowframebreaks]{Bibliography}
+  \printbibliography[heading=none]
+\end{frame}
+$endif$
 
 \end{document}
 

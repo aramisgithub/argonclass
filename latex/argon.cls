@@ -24,13 +24,3 @@
 \RequirePackage{moretoc}
 \RequirePackage{morelink}
 
-% Centered environment
-\newlength{\foreminusspine}\setlength{\foreminusspine}{\foremargin}
-\addtolength{\foreminusspine}{-\spinemargin}
-\newenvironment{centered}{%
-  \begin{adjustwidth*}{0em}{-\foreminusspine}
-    \RaggedRight
-  }{%
-  \end{adjustwidth*}
-}
-

@@ -64,6 +64,16 @@
    \textquotedblright={150, } % right quotation mark
  }
 
+% Custom letterspacing values
+\RequirePackage{letterspace}
+
+% Commands for letterspaced capitals
+\newcommand{\lowercaps}[1]{\textsc{\MakeLowercase{#1}}}
+\newcommand{\uppercaps}[1]{\textls[140]{{\MakeTextUppercase{#1}}}}
+
+% Commands for declerative formatting
+\newcommand{\abbr}[1]{\lowercaps{#1}}
+
 % Use the Minion Pro font
 \usepackage[
   fullfamily,     % Use all available weights

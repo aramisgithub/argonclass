@@ -17,10 +17,24 @@
 \renewcommand\normalsize{\@setfontsize\normalsize{11pt}{15pt}}
 \renewcommand\small{\@setfontsize\small{10pt}{13pt}}
 
-\RequirePackage[T1]{fontenc}
+% Set two convenient amounts of empty space -- \myskip and \mysmallskip
+\newskip\myskipamount
+\myskipamount=1.0em plus 0.5em minus 0.2em
+\newcommand{\mybreak}{\par\ifdim\lastskip<\myskipamount
+  \removelastskip\penalty-100\myskip\fi}
+\newcommand{\myskip}{\vspace\myskipamount}
+
+\newskip\mysmallskipamount
+\mysmallskipamount=0.5em plus 0.1em minus 0.1em
+\newcommand{\mysmallbreak}{\par\ifdim\lastskip<\mysmallskipamount
+  \removelastskip\penalty-100\mysmallskip\fi}
+\newcommand{\mysmallskip}{\vspace\mysmallskipamount}
+
+% Create \newthought command
+\def\newthought #1 #2 #3 {\myskip\noindent {\lowercaps{#1}} {\lowercaps{#2}} {\lowercaps{#3}} }
+
+% Allow utf8 input
 \RequirePackage[utf8]{inputenc}
-\RequirePackage{AlegreyaSans}
-\renewcommand*\oldstylenums[1]{{\AlegreyaSansOsF #1}}
 
 % Microtypographic awesomeness!
 \RequirePackage[

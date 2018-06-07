@@ -59,10 +59,16 @@
 % Remove all vertical spacing in all lists
 \setlist{nosep}
 
+% Apart from an empty line above and below them
+\setlist[1]{topsep=\onelineskip}
+
 % Place list labels in margin
 \setlist[1]{leftmargin=0em}
 \setlist[2]{leftmargin=1em}
 \setlist[3]{leftmargin=2em}
 \setlist[4]{leftmargin=3em}
 \setlist[5]{leftmargin=4em}
+
+% Use small caps labels in description lists
+\setlist[description]{wide=0\parindent,font=\normalfont\scshape\MakeLowercase}
 

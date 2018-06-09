@@ -8,9 +8,13 @@
     {\large\theauthor\par}%
     \vspace{3pc}
 
+    $if(title1)$
     {\Large\color{red}\uppercaps{$title1$}\par}%
     \vspace{0.5em}
     {\Large\color{red}\uppercaps{$title2$}\par}%
+    $else$
+    {\Large\color{red}\uppercaps{$title$}\par}%
+    $endif$
     \vspace{3pc}
 
     \vfill

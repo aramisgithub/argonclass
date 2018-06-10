@@ -1,5 +1,4 @@
-# aramisgithub's LaTeX configuration – The `argon` LaTeX class + 
-pandoc templates
+# aramisgithub's LaTeX configuration – The `argon` LaTeX class + pandoc templates
 
 The `argon` class is designed to be used both for reports and 
 articles. 

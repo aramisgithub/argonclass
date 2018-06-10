@@ -31,12 +31,20 @@
 % Use text figures instead of lining figures
 \setsansfont[
   BoldFont={Fira Sans},
-  Numbers={OldStyle}
+  Numbers={OldStyle},
+  SmallCapsFeatures={LetterSpace={10}},
 ]{Fira Sans Light}
 
 \setmathsfont(Digits)[
   Numbers={Lining, Proportional}
 ]{Fira Sans Light}
+
+% Commands for letterspaced capitals
+\newcommand{\lowercaps}[1]{\textsc{\MakeLowercase{#1}}}
+\newcommand{\uppercaps}[1]{\textsc{\MakeUppercase{#1}}}
+
+% Command for abbreviations and acronyms
+\newcommand{\abbr}[1]{\lowercaps{#1}}
 
 
 %%
@@ -65,10 +73,6 @@ $if(bib)$
 \let\cite\mycite
 
 $endif$
-
-% Command required by how Pandoc handles the list conversion
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 
 %%
@@ -137,7 +141,7 @@ $endif$
 $if(institute)$
 \institute{$institute$}
 $else$
-\institute{\textsc{\MakeTextLowercase{MSC}}}
+\institute{\lowercaps{MSC}}
 $endif$
 
 % Sets a bunch of PDF metadata intelligently depending on if it has been set

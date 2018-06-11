@@ -6,12 +6,10 @@
 \ProvidesPackage{moremargins}
 [2018/04/30 All margin- and sidenote-related settings for the argon class]
 
-% Make a new length equal to the ideal width of a line
-\newlength{\commonline}
-\settowidth{\commonline}{\normalfont Due to the lifestyle the Mongols led, they lacked an abundance of r}
-
-% Set width of typeblock in accordance with the ideal width
-\settypeblocksize{*}{\commonline}{2}
+% Set width of typeblock in accordance with copyfitting table from The Elements
+% of Typographic Style; the lowercase Minion Pro alphabet at 11pt is 119.98 pt
+% long.
+\settypeblocksize{*}{24pc}{2}
 
 % Traditional vertical margin ratio
 \setulmargins{*}{*}{2}

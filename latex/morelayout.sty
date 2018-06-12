@@ -19,7 +19,7 @@
 
 % Set header and footer heights
 \setlength{\headheight}{15pt}
-\setlength{\footskip}{2\baselineskip}
+\setlength{\footskip}{45pt}
 
 % Empty part page style
 \aliaspagestyle{part}{empty}
@@ -38,17 +38,17 @@
   \renewcommand{\printchaptertitle}[1]{%
     \raggedright\uppercaps{##1}}
   \renewcommand{\afterchaptertitle}{%
-    \vskip\onelineskip \hrule\vskip\onelineskip}
+    \vspace{15pt} \hrule\vspace{15pt}}
 }
 
 % (Sub)section styles
-\setsecheadstyle{\raggedright\scshape\needspace{1em}\lowercase}
-\setbeforesecskip{-1em minus 0.5em}
-\setaftersecskip{1em minus 0.5em}
+\setsecheadstyle{\raggedright\normalfont\scshape\needspace{1em}\lowercase}
+\setbeforesecskip{-15pt}
+\setaftersecskip{15pt}
 
 \setsubsecheadstyle{\raggedright\normalfont\itshape\needspace{1em}}
-\setbeforesubsecskip{-1em minus 0.5em}
-\setaftersubsecskip{1em minus 0.5em}
+\setbeforesubsecskip{-15pt}
+\setaftersubsecskip{15pt}
 
 % Allows customisation of lists
 \usepackage{enumitem}
@@ -66,7 +66,7 @@
 \setlist{nosep}
 
 % Place list labels in margin and leave an empty line above and below lists
-\setlist[1]{leftmargin=0em,topsep=\onelineskip}
+\setlist[1]{leftmargin=0em,topsep=15pt}
 \setlist[2]{leftmargin=1em}
 \setlist[3]{leftmargin=2em}
 \setlist[4]{leftmargin=3em}

@@ -10,7 +10,7 @@
   \PassOptionsToClass{oneside}{memoir}
 }
 
-\LoadClass[11pt,a4paper]{memoir}
+\LoadClass[12pt,a4paper]{memoir}
 
 % Load custom packages for settings
 \RequirePackage{whynot}

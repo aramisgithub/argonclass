@@ -17,9 +17,12 @@
 \renewcommand\normalsize{\@setfontsize\normalsize{12pt}{15pt}}
 \renewcommand\small{\@setfontsize\small{10pt}{13pt}}
 
-% Create \newthought command
-\def\newthought #1 #2 #3 {\vspace{\onelineskip}\noindent {\lowercaps{#1}} {\lowercaps{#2}} {\lowercaps{#3}} }
+% Create \newthought and \longnewthought commands for starting a new section
+% without a section heading. It adds a little vertical space and sets three or
+% four words in all small caps.
 \def\newthought #1 #2 #3 {\vspace{15pt}\noindent {\lowercaps{#1}} {\lowercaps{#2}} {\lowercaps{#3}} }
+\def\longnewthought #1 #2 #3 #4 {\vspace{15pt}\noindent {\lowercaps{#1}} {\lowercaps{#2}} {\lowercaps{#3}} {\lowercaps{#4}} }
+
 % Allow utf8 input
 \RequirePackage[utf8]{inputenc}
 

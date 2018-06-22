@@ -12,19 +12,34 @@
 % Fix overlapping margin notes which are in close proximity
 \RequirePackage{marginfix}
 
-% Smaller margin notes
-\newcommand{\myside}[1]{\sidenote{\footnotesize\RaggedRight{#1}}}
+% Command for typesetting the sidenote marker
+\newcommand{\sidemark}[1]{#1.}
 
-% Styling and placement of mark
-\footmarkstyle{{#1. }}
-\setlength{\footmarkwidth}{0em}
-\setlength{\footmarksep}{-\footmarkwidth}
+% Command for deciding justification for content in the margin
+\newcommand{\argonflush}{
+  \ifthenelse{\boolean{@argon@twoside}}{%
+    \checkoddpage
+    \ifoddpage%
+      \RaggedRight
+    \else
+      \RaggedLeft
+    \fi
+  }{
+    \RaggedRight
+  }
+}
 
-% Move all footnotes into margin
-\footnotesinmargin
-
-% Allow custom captions
-\RequirePackage{caption}
+% Floating margin notes (for automatic alignment)
+\newcommand{\myside}[1]{%
+  \footnotemark%
+  \ignorespaces%
+  \marginpar{%
+    \sidemark{\thefootnote}%
+    \argonflush
+    \footnotesize #1
+  }
+  \unskip%
+}
 
 % Margin figure caption settings
 \captionsetup[marginfigure]{
@@ -34,11 +49,31 @@
 % Custom margin figure
 \newcommand{\myfig}[2]{
   \begin{marginfigure}
-    \strictpagechecktrue
-    \captionsetup{type=figure,%
-                  options=marginfigure,%
-                  justification=RaggedRight}
+    \ifthenelse{\boolean{@argon@twoside}}{%
+      \checkoddpage
+      \ifoddpage%
+      \captionsetup{type=figure,%
+        options=marginfigure,%
+        justification=RaggedRight,%
+        singlelinecheck=false}
+      \RaggedRight
+      \else
+      \captionsetup{type=figure,%
+        options=marginfigure,%
+        justification=raggedleft,%
+        singlelinecheck=false}
+      \RaggedLeft
+      \fi
+    }{
+      \captionsetup{type=figure,%
+        options=marginfigure,%
+        justification=RaggedRight,%
+        singlelinecheck=false}
+      \RaggedRight
+    }
     \includegraphics[width=\linewidth]{#1}
+    \vspace{-15pt}
+    \label{#1}
     \caption*{#2}
   \end{marginfigure}
 }

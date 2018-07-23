@@ -19,7 +19,7 @@
 
 % Set header and footer heights
 \setlength{\headheight}{15pt}
-\setlength{\footskip}{30pt}
+\setlength{\footskip}{40pt}
 
 % Empty part page style
 \aliaspagestyle{part}{empty}
@@ -43,12 +43,12 @@
 
 % (Sub)section styles
 \setsecheadstyle{\raggedright\normalfont\scshape\needspace{1em}\lowercase}
-\setbeforesecskip{-15pt}
-\setaftersecskip{15pt}
+\setbeforesecskip{-15pt minus 5pt}
+\setaftersecskip{15pt minus 5pt}
 
 \setsubsecheadstyle{\raggedright\normalfont\itshape\needspace{1em}}
-\setbeforesubsecskip{-15pt}
-\setaftersubsecskip{15pt}
+\setbeforesubsecskip{-15pt minus 5pt}
+\setaftersubsecskip{15pt minus 5pt}
 
 % Allows customisation of lists
 \RequirePackage{enumitem}
@@ -65,13 +65,15 @@
 % Remove all vertical spacing in all lists
 \setlist{nosep}
 
-% Place list labels in margin and leave an empty line above and below lists
-\setlist[1]{leftmargin=0em,topsep=15pt}
+% Place list labels in margin and leave a (flexible) empty line above and below
+% lists
+\setlist[1]{leftmargin=0em,topsep=15pt plus 5pt minus 5pt}
 \setlist[2]{leftmargin=1em}
 \setlist[3]{leftmargin=2em}
 \setlist[4]{leftmargin=3em}
 \setlist[5]{leftmargin=4em}
 
-% Use small caps labels in description lists
-\setlist[description]{wide=0\parindent,font=\normalfont\itshape,leftmargin=15pt}
+% Use italic labels in description lists while leaving a flexible line above and
+% below the list
+\setlist[description]{wide=\parindent,font=\normalfont\itshape,leftmargin=15pt plus 5pt minus 5pt}
 

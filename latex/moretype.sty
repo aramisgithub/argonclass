@@ -13,15 +13,15 @@
 
 % Set a point size of 11 and leading of 15pt for the body text
 \renewcommand\Large{\@setfontsize\Large{16pt}{22pt}}
-\renewcommand\large{\@setfontsize\large{15pt}{17pt}}
+\renewcommand\large{\@setfontsize\large{15pt}{18pt}}
 \renewcommand\normalsize{\@setfontsize\normalsize{12pt}{15pt}}
 \renewcommand\small{\@setfontsize\small{10pt}{13pt}}
 
 % Create \newthought and \longnewthought commands for starting a new section
 % without a section heading. It adds a little vertical space and sets three or
 % four words in all small caps.
-\def\newthought #1 #2 #3 {\vspace{15pt}\noindent {\lowercaps{#1}} {\lowercaps{#2}} {\lowercaps{#3}} }
-\def\longnewthought #1 #2 #3 #4 {\vspace{15pt}\noindent {\lowercaps{#1}} {\lowercaps{#2}} {\lowercaps{#3}} {\lowercaps{#4}} }
+\def\newthought #1 #2 #3 {\vspace{15pt plus 5pt minus 5pt}\noindent {\lowercaps{#1}} {\lowercaps{#2}} {\lowercaps{#3}} }
+\def\longnewthought #1 #2 #3 #4 {\vspace{15pt plus 5pt minus 5pt}\noindent {\lowercaps{#1}} {\lowercaps{#2}} {\lowercaps{#3}} {\lowercaps{#4}} }
 
 % Allow utf8 input
 \RequirePackage[utf8]{inputenc}

@@ -12,9 +12,6 @@
 % Fix overlapping margin notes which are in close proximity
 \RequirePackage{marginfix}
 
-% Command for typesetting the sidenote marker
-\newcommand{\sidemark}[1]{#1.}
-
 % Command for deciding justification for content in the margin
 \newcommand{\argonflush}{
   \ifthenelse{\boolean{@argon@twoside}}{%
@@ -31,19 +28,26 @@
 
 % Floating margin notes (for automatic alignment)
 \newcommand{\myside}[1]{%
+  % Insert the superscript marker so the reader can eaily refer to a given
+  % sidenote
   \footnotemark%
   \ignorespaces%
   \marginpar{%
-    \sidemark{\thefootnote}%
-    \argonflush
-    \footnotesize #1
+    % We use enumerate with the nosep option to easily hang the number in the
+    % margin, while not breaking vertical spacing in the column of sidenotes
+    \begin{enumerate}[nosep]
+      % Use a custom list item label to insert the sidenote number
+      \item[\thefootnote]
+      \argonflush
+      \small #1
+    \end{enumerate}
   }
   \unskip%
 }
 
 % Margin figure caption settings
 \captionsetup[marginfigure]{
-  font={footnotesize}
+  font={small}
 }
 
 % Custom margin figure

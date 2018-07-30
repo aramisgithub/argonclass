@@ -53,11 +53,8 @@
 % Allows customisation of lists
 \RequirePackage{enumitem}
 
-% Command for smaller bullet
-\newcommand{\sbt}{\,\begin{picture}(-1,1)(-1,-3)\circle*{2.2}\end{picture}\ }
-
 % Use smaller bullet for itemize regardless of indentation
-\setlist[itemize]{label=\sbt}
+\setlist[itemize]{label=\textbullet}
 
 % Remove dot from enumerate lists
 \setlist[enumerate]{label=\arabic*}

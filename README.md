@@ -1,4 +1,5 @@
-# aramisgithub's LaTeX configuration – The `argon` LaTeX class + pandoc templates
+# arzg’s LaTeX configuration – The `argon` LaTeX class + pandoc 
+templates
 
 The `argon` class is designed to be used both for reports and 
 articles. 
@@ -18,5 +19,5 @@ templates; not with standalone documents. It is best to use
 
 For anyone using this project in conjunction with `vim` and 
 TeXShop, a few handy scripts can be found in [my 
-dotfiles](https://github.com/aramisgithub/dotfiles).
+dotfiles](https://github.com/arzg/dotfiles).
 

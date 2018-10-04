@@ -20,4 +20,3 @@ templates; not with standalone documents. It is best to use
 For anyone using this project in conjunction with `vim` and 
 TeXShop, a few handy scripts can be found in [my 
 dotfiles](https://github.com/arzg/dotfiles).
-

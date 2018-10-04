@@ -1,10 +1,9 @@
 %!TEX TS-program = xelatexmk
 \documentclass{beamer}
 
-
-%%
-%% Theme
-%%
+%
+% Theme
+%
 
 % Use the metropolis theme for a more modern layout
 \usetheme[
@@ -14,10 +13,9 @@
 % Use green colours instead of the orange-and-teal colours used by default
 \usecolortheme{spruce}
 
-
-%%
-%% Fonts
-%%
+%
+% Fonts
+%
 
 % Microtypographic awesomeness!
 \usepackage[final]{microtype}
@@ -46,10 +44,9 @@
 % Command for abbreviations and acronyms
 \newcommand{\abbr}[1]{\lowercaps{#1}}
 
-
-%%
-%% Bibliography
-%%
+%
+% Bibliography
+%
 
 % Only add bibliography-related code if we're using one
 $if(bib)$
@@ -74,10 +71,9 @@ $if(bib)$
 
 $endif$
 
-
-%%
-%% Random packages
-%%
+%
+% Random packages
+%
 
 \usepackage{booktabs}  % Fancy rules for tables
 \usepackage{graphicx}  % Add images
@@ -85,10 +81,9 @@ $endif$
 \usepackage{tabularx}  % Allows you to wrap lines in a table
 \usepackage{textcase}  % Manipulate text capitalisation more easily
 
-
-%%
-%% Links
-%%
+%
+% Links
+%
 
 \usepackage{hyperref}
 
@@ -106,10 +101,9 @@ $endif$
   pdfborder=0 0 0,
 }
 
-
-%%
-%% Metadata
-%%
+%
+% Metadata
+%
 
 % Set title. No check has been added because title is the bare minimum of
 % information that can be specified
@@ -172,10 +166,9 @@ $endif$
   $endif$
 }
 
-
-%%
-%% Document
-%%
+%
+% Document
+%
 
 \begin{document}
 
@@ -192,4 +185,3 @@ $if(bib)$
 $endif$
 
 \end{document}
-

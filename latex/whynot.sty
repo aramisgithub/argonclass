@@ -1,18 +1,18 @@
-%%%
-%%% whynot.sty -- Random useful packages
-%%%
+%
+% whynot.sty -- Random useful packages
+%
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{whynot}
 [2018/04/30 Loads packages and sets settings that might not be used, but it does not hurt to load them anyway]
 
-%%% Commands
+% Commands
 
 % For people that use pandoc
 \providecommand{\tightlist}{
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
-%%% Packages
+% Packages
 
 % Prevents bad habits
 \RequirePackage[l2tabu, orthodox]{nag}
@@ -41,4 +41,3 @@
 
 % Command for a centered chemical formula
 \newcommand{\ch}[1]{\begin{figure}[ht]\centering\ce{#1}\end{figure}}
-

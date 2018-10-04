@@ -1,6 +1,6 @@
-%%%
-%%% morebib.sty -- Bibliography setup
-%%%
+%
+% morebib.sty -- Bibliography setup
+%
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{morebib}
@@ -17,11 +17,9 @@
   backref=true          % Show where something was cited
 ]{biblatex}
 
-
 % Set bibliography source file
 \addbibresource{refs.bib}
 
 % Automatically use specified citation type
 \newcommand\mycite{\unskip~\autocite}
 \let\cite\mycite
-

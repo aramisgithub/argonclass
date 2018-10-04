@@ -23,4 +23,3 @@
 \RequirePackage{moremargins}
 \RequirePackage{moretoc}
 \RequirePackage{morelink}
-

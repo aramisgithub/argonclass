@@ -1,3 +1,7 @@
+# Obsolete project · not maintained any longer – go [here][newrepo] instead!
+
+---
+
 # arzg’s LaTeX configuration – The `argon` LaTeX class + pandoc 
 templates
 
@@ -20,3 +24,5 @@ templates; not with standalone documents. It is best to use
 For anyone using this project in conjunction with `vim` and 
 TeXShop, a few handy scripts can be found in [my 
 dotfiles](https://github.com/arzg/dotfiles).
+
+[newrepo]: https://github.com/arzg/polytextum
